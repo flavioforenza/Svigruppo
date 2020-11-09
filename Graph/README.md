@@ -1,11 +1,11 @@
 # Svigruppo
 ### Esercizio Grafo
 
-![](grafo.png)
+![](img/grafo.png)
 
 Ricerca dei path a partire dal nodo A:
 
-![](solution.png)
+![](img/solution.png)
 
 
 
