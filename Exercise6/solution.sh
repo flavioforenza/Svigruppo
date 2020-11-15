@@ -3,7 +3,7 @@
 #--------------- 1 ---------------
 sh Svigruppo/Exercise2/solution.sh
 cd Exercise2
-#Ho woking dir e index di 'due'
+#Ho working dir e index di 'due'
 #nell'esecizio 2 l'ultimo comando 
 #era git reset --soft HEAD^
 git commit --amend -m due
@@ -41,10 +41,23 @@ git merge HEAD@{1}
 sh Svigruppo/Exercise2/solution.sh
 cd Exercise2
 
-
-#ripristino i file della WD e index della commit 3
-git reset --hard HEAD
+git reset --hard 
 rm tmp
+git commit --amend due
+git checkout HEAD@{3}
+git rebase master
+mv C\~HEAD A
+mv D B
+git add .
+git rebase --continue
+git checkout master
+git checkout -b tmp
+git merge tmp
+git branch -D tmp
+
+
+
+
 
 
 
