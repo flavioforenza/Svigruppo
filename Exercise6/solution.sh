@@ -56,6 +56,20 @@ git merge tmp
 git branch -D tmp
 
 
+#--------------- 4 ---------------
+git reset --hard
+git filter-branch --subdirectory-filter C/
+git commit --amend -m due
+git rebase student
+git checkout refs/original/refs/heads/master
+git reset --soft master
+git add .
+git commit -m tre
+git checkout -b tmp
+git checkout master
+git merge tmp
+git branch -d tmp
+git update-ref -d refs/original/refs/heads/master
 
 
 
