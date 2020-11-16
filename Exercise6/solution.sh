@@ -57,6 +57,8 @@ git branch -D tmp
 
 
 #--------------- 4 ---------------
+sh Svigruppo/Exercise2/solution.sh
+cd Exercise2
 git reset --hard
 git filter-branch --subdirectory-filter C/
 git commit --amend -m due
@@ -70,6 +72,65 @@ git checkout master
 git merge tmp
 git branch -d tmp
 git update-ref -d refs/original/refs/heads/master
+
+#--------------- 5 ---------------
+sh Svigruppo/Exercise2/solution.sh
+cd Exercise2
+git reset --hard 
+#sono nella commit 3
+git filter-branch --subdirectory-filter C
+git commit --amend -m due
+git checkout refs/original/refs/heads/master
+rm tmp
+mkdir tmp
+mv A B C tmp
+git add .
+git commit -m tre
+git update-ref -d refs/original/refs/heads/master
+git filter-branch --subdirectory-filter tmp
+git update-ref -d refs/original/HEAD
+git checkout -b tmp
+git checkout master
+git rebase student
+git checkout tmp
+git rebase master 
+echo 'text C\n'>A
+echo 'text C\n'>B
+m C\~HEAD D
+git add .
+git rebase --continue
+
+git checkout master
+git merge tmp
+git branch -D tmp
+
+
+#--------------- 6 ---------------
+#OBBIETTIVO: 
+# 1. inserire i file di ogni commit in una dir (con il tree-filter)
+# 2. Fare una commmit separata per ogni dir (con il subdirectory-filter)
+sh Svigruppo/Exercise2/solution.sh
+cd Exercise2
+git reset --hard 
+git filter-branch --subdirectory-filter C
+git commit --amend -m due
+git checkout refs/original/refs/heads/master
+
+git checkout -b tre
+git filter-branch -f --tree-filter 'mkdir t1; mv * t1; mv t1 core;' -- --all
+
+git checkout master
+git filter-branch -f --subdirectory-filter core
+git commit --amend -m tre
+git checkout refs/original/refs/heads/master
+git rebase student
+git update-ref -d refs/original/refs/heads/master
+git checkout -b temp
+git checkout master
+git rebase temp
+git branch -D temp
+
+
 
 
 
