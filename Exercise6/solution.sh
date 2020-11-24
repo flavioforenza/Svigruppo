@@ -106,9 +106,6 @@ git branch -D tmp
 
 
 #--------------- 6 ---------------
-#OBBIETTIVO: 
-# 1. inserire i file di ogni commit in una dir (con il tree-filter)
-# 2. Fare una commmit separata per ogni dir (con il subdirectory-filter)
 sh Svigruppo/Exercise2/solution.sh
 cd Exercise2
 git reset --hard 
