@@ -112,23 +112,17 @@ git branch -D tmp
 sh Svigruppo/Exercise2/solution.sh
 cd Exercise2
 git reset --hard 
+git branch t3
+#prende il contenuto della cartella C e ne fa una commit separata
 git filter-branch --subdirectory-filter C
 git commit --amend -m due
-git checkout refs/original/refs/heads/master
-
-git checkout -b tre
-git filter-branch -f --tree-filter 'mkdir t1; mv * t1; mv t1 core;' -- --all
-
-git checkout master
-git filter-branch -f --subdirectory-filter core
-git commit --amend -m tre
-git checkout refs/original/refs/heads/master
-git rebase student
+git checkout t3
+git reset --soft master 
+git commit -m tre
 git update-ref -d refs/original/refs/heads/master
-git checkout -b temp
 git checkout master
-git rebase temp
-git branch -D temp
+git merge t3
+git branch -D t3
 
 
 
