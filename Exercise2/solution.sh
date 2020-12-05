@@ -32,6 +32,7 @@ git add .
 git commit -m due
 
 printf "text D\n" > tmp
+git add .
 git hash-object -w tmp
 
 git reset --soft HEAD^

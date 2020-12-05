@@ -16,7 +16,7 @@ git commit -m 'feature RT'
 
 #bisogna rinominare R in Z
 mv R/ Z/
-#aggiungere una seconda rica a T
+#aggiungere una seconda riga a T
 printf 'aggiunta\n' >> T
 #creare un nuovo elemento U
 printf 'linea\n' > U
@@ -30,6 +30,7 @@ git add .
 git commit -m end
 
 printf 'terzo\n' > tmp
+git add .
 
 
 
