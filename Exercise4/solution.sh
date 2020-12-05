@@ -15,7 +15,7 @@ git add .
 git commit -m 'feature RT'
 
 #bisogna rinominare R in Z
-mv R/ Z/
+git mv R Z
 #aggiungere una seconda riga a T
 printf 'aggiunta\n' >> T
 #creare un nuovo elemento U
@@ -24,10 +24,13 @@ git add .
 git commit -m 'feature ZUT'
 git branch ZUT
 
-rm T U
-rm -rf Z
-git add .
+git rm -r Z U T 
 git commit -m end
+
+#stacchiamo HEAD da master e facciamo puntare alla commit di tale ramo 
+#in questo modo HEAD sarà in detached mode
+
+git checkout --detach master
 
 printf 'terzo\n' > tmp
 git add .
