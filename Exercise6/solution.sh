@@ -96,7 +96,7 @@ git checkout tmp
 git rebase master 
 echo 'text C\n'>A
 echo 'text C\n'>B
-m C\~HEAD D
+mv C\~HEAD D
 git add .
 git rebase --continue
 

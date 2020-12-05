@@ -11,7 +11,7 @@ git add .
 git commit -m primo 
 
 mkdir A
-mv U A
+git mv U A
 printf 'tre\n' > B
 git add .
 git commit -m bello
