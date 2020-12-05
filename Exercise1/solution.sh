@@ -17,11 +17,11 @@ git mv B C
 git mv A D
 git add .
 git commit -m 'due'
-#1 tree -> 2 tree = 1 tree contiene la directory 2 tree  
-git mv C A #necessario per creare la cartella C in seguito
-mkdir C
-git mv A C/C
-git mv D C
+  
+mkdir _C #temp directory
+git mv C D _C
+git mv _C C #rename in C
+
 printf "text C\n" > A
 printf "text C\n" > B
 git add .
