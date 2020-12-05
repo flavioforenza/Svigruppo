@@ -12,20 +12,19 @@ git add .
 git commit -m root
 
 git branch uno
-
-mkdir D
-mv A D/
-mv B D/
-printf 'text E\n' > D/E
-git add .
-git commit -m bis
-
-git checckout uno
+git checkout uno
 printf 'text C\n' > C
 git add .
 git commit -m first
 
-git checckout master
+git checkout master
+
+mkdir D
+git mv A B D
+printf 'text E\n' > D/E
+git add .
+git commit -m bis
+
 git merge uno -m ooohhh
 
 
