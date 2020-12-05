@@ -13,29 +13,31 @@ git add .
 git commit -m uno
 git branch student
 
+mkdir C
+git mv A C/D
+git mv B C/C
 printf 'text C\n' > A
 printf 'text C\n' > B
-mkdir C
-printf 'text B\n' > tmp1
-printf 'text A\n' > D
-mv tmp1 C/C
-mv D C/
 git add .
-git commit -m tre
+git commit -m 'tre'
 
-mv C/C A
-mv C/D B
-git rm -rf C/
-mv A C
-mv B D
-git add .
+#rinomino la directory C per estrarne il file C dal suo interno
+git mv C _C 
+#estraggo il contenuto della directory C
+git mv _C/* .
+git rm A B
+#possiamo anche omettere questa istruzione perchè _C essendo vuota
+#non sarà mai inserita nell'index
+#rm _C 
 git commit -m due
 
-printf "text D\n" > tmp
-git add .
-git hash-object -w tmp
+git reset --hard HEAD^
 
-git reset --soft HEAD^
+git checkout student
+
+printf "text D\n" > D
+git add .
+
 
 
 
