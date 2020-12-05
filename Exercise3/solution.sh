@@ -11,8 +11,7 @@ printf 'text B\n' > B
 git add .
 git commit -m root
 
-git branch uno
-git checkout uno
+git checkout -b uno
 printf 'text C\n' > C
 git add .
 git commit -m first
