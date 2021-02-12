@@ -19,6 +19,7 @@ git mv R Z
 #aggiungere una seconda riga a T
 printf 'aggiunta\n' >> T
 #creare un nuovo elemento U
+# cp Z/S U
 printf 'linea\n' > U
 git add .
 git commit -m 'feature ZUT'
@@ -27,7 +28,7 @@ git branch ZUT
 git rm -r Z U T 
 git commit -m end
 
-#stacchiamo HEAD da master e facciamo puntare alla commit di tale ramo 
+#stacchiamo HEAD da master e facciamolo puntare alla commit di tale ramo 
 #in questo modo HEAD sarà in detached mode
 
 git checkout --detach master
