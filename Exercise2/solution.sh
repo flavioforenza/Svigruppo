@@ -35,7 +35,7 @@ git reset --hard HEAD^
 
 git checkout student
 
-printf "text D\n" > D
+printf "text D\n" > T
 git add .
 
 
