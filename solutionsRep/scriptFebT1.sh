@@ -30,8 +30,6 @@ git commit -m completato
 git tag featConStoria
 git reset --soft HEAD^^^
 git checkout -b feature1
-
-git add .
 git commit -m 'nuova feature completata'
 
 git checkout master
